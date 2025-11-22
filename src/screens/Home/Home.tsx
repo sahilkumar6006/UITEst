@@ -8,6 +8,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, FlatList, Image, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import InfoOverlayModal from '@/components/InfoOverlayModal';
+import { verticalScale } from '@/styles/scaling';
 
 const Home = () => {
   const navigation = useNavigation<any>();
@@ -30,7 +31,7 @@ const Home = () => {
           <Label style={{ fontWeight: 700, fontSize: 22, marginTop: 21, color: '#FFFFFF' }}>Upgrade your Motor
             Insurance Plan</Label>
           <Label text="Your Motor Insurance Plan is almost up to date. Upgrade to get the best deals and
-            discounts."  preset='default' style={{ marginVertical: 13 }} />
+            discounts."  preset='default' style={{ marginVertical: 13, color: '#FFFFFF' }} />
           <RNButton title="Upgrade" size="btnSmall" onPress={handleUpgrade} style={{ marginBottom: 13 }} />
           <Car />
         </View>
@@ -40,15 +41,14 @@ const Home = () => {
 
         </View>
       </View>
-      <View style={{ marginTop: 12 }} />
+      <View style={{ marginTop: 21 }} />
       <FlatList
         data={homeScreenData}
         horizontal
         renderItem={({ item }) => (
-          <View style={{ marginTop: 21, backgroundColor: '#FFFFFF', padding: 13, height: 123, marginHorizontal: 5, elevation: 3, borderRadius: 20 }}>
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <View style={{ marginVertical: 30, backgroundColor: '#FFFFFF', padding: 13, height: 125, marginHorizontal: 5, elevation: 3, borderRadius: 15 }}>
+            <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
               <Image source={item.image} style={{ width: 50, height: 50, marginRight: 13, resizeMode: 'contain' }} />
-
             </View>
             <View style={{ alignSelf: 'flex-start' }}>
               <Label text={item.name} preset='small' />
@@ -58,6 +58,7 @@ const Home = () => {
         )}
       />
 
+      <View style={{ marginTop: verticalScale(20) }} />
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 21 }}>
         <Label>Your Insured Cars</Label>
         <Label>See All</Label>

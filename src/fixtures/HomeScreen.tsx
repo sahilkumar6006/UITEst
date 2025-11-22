@@ -5,7 +5,7 @@ export const homeScreenData = [
         id: 1,
         name: 'Toyata Yaris',
         image: images.Car1,
-        Claims: 0,
+        Claims: 1,
     }, {
         id: 2,
 

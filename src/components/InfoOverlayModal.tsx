@@ -1,12 +1,9 @@
-/**
- * Info Overlay Modal Component
- * @file InfoOverlayModal.tsx
- */
-
 import React, { useState } from 'react';
 import { Modal, View, Text, StyleSheet, Pressable, TouchableOpacity } from 'react-native';
 import RNButton from '@/components/RNButton';
 import Check from '@/assets/images/svg/Check';
+import Individual from '@/assets/images/svg/Individual';
+import Cooprate from '@/assets/images/svg/Cooprate';
 
 interface InfoOverlayModalProps {
   visible: boolean;
@@ -34,15 +31,12 @@ const InfoOverlayModal: React.FC<InfoOverlayModalProps> = ({ visible, onClose, o
     >
       <View style={styles.overlay}>
         <View style={styles.modalContainer}>
-          {/* Title */}
           <Text style={styles.title}>Upgrade to Comprehensive Motor Insurance Plan</Text>
-          
-          {/* Description */}
+
           <Text style={styles.description}>
             Kindly select & update your information and we'll get your vehicle covered in no time.
           </Text>
 
-          {/* Selection Options */}
           <View style={styles.optionsContainer}>
             <TouchableOpacity
               style={[
@@ -52,7 +46,8 @@ const InfoOverlayModal: React.FC<InfoOverlayModalProps> = ({ visible, onClose, o
               onPress={() => setSelectedType('individual')}
             >
               <View style={styles.optionContent}>
-                <View style={[styles.optionIcon, selectedType === 'individual' && styles.optionIconSelected]} />
+
+                <Individual />
                 <Text style={[styles.optionText, selectedType === 'individual' && styles.optionTextSelected]}>
                   I am an Individual
                 </Text>
@@ -67,7 +62,7 @@ const InfoOverlayModal: React.FC<InfoOverlayModalProps> = ({ visible, onClose, o
               onPress={() => setSelectedType('corporate')}
             >
               <View style={styles.optionContent}>
-                <View style={[styles.optionIcon, selectedType === 'corporate' && styles.optionIconSelected]} />
+                <Cooprate />
                 <Text style={[styles.optionText, selectedType === 'corporate' && styles.optionTextSelected]}>
                   I am a Corporate
                 </Text>
@@ -75,7 +70,6 @@ const InfoOverlayModal: React.FC<InfoOverlayModalProps> = ({ visible, onClose, o
             </TouchableOpacity>
           </View>
 
-          {/* Privacy Notice Checkbox */}
           <TouchableOpacity
             style={styles.checkboxContainer}
             onPress={() => setAgreedToPrivacy(!agreedToPrivacy)}
@@ -86,7 +80,6 @@ const InfoOverlayModal: React.FC<InfoOverlayModalProps> = ({ visible, onClose, o
             <Text style={styles.checkboxText}>I agree to the Data Privacy Notice</Text>
           </TouchableOpacity>
 
-          {/* Continue Button */}
           <Pressable
             style={[
               styles.continueButton,
@@ -167,6 +160,7 @@ const styles = StyleSheet.create({
   },
   optionText: {
     fontSize: 14,
+    marginStart: 4,
     fontWeight: '500',
     color: '#201E1E',
     fontFamily: 'Poppins',
