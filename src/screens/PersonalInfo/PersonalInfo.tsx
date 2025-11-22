@@ -1,8 +1,3 @@
-/**
- * PersonalInfo screen component - Step 1 of Upgrade Flow
- * @file PersonalInfo.tsx
- */
-
 import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import FormInput from '@/components/FormInput';

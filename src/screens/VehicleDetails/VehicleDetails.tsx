@@ -1,8 +1,3 @@
-/**
- * VehicleDetails screen component - Step 2 of Upgrade Flow
- * @file VehicleDetails.tsx
- */
-
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import FormInput from '@/components/FormInput';
@@ -33,7 +28,6 @@ const VehicleDetails = () => {
       description="Fill or Update your information and we'll get your vehicle covered in no time."
       onButtonPress={() => navigation.navigate('Quote')}
     >
-      {/* ID Upload Section */}
       <View style={styles.idSection}>
         <View style={styles.idCard}>
           <View style={styles.idCardContent}>
@@ -43,7 +37,6 @@ const VehicleDetails = () => {
         </View>
       </View>
 
-      {/* Vehicle Information Section */}
       <View style={styles.vehicleSection}>
         <Text style={styles.sectionTitle}>Vehicle Information</Text>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.vehicleList}>
@@ -64,7 +57,6 @@ const VehicleDetails = () => {
         </ScrollView>
       </View>
 
-      {/* Form Fields */}
       <View style={styles.formContainer}>
         <FormInput
           label="Car Name"

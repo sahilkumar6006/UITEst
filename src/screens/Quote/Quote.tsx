@@ -1,7 +1,3 @@
-/**
- * Quote screen component - Step 3 of Upgrade Flow
- * @file Quote.tsx
- */
 
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
@@ -39,7 +35,6 @@ const Quote = () => {
         buttonTitle="Proceed to Pay"
         onButtonPress={handleProceedToPay}
       >
-        {/* Quote Summary Card */}
         <View style={styles.quoteCard}>
           <View style={styles.quoteContent}>
             {quoteItems.map((item, index) => (
@@ -57,13 +52,11 @@ const Quote = () => {
           </View>
         </View>
 
-        {/* Download Quote Button */}
         <TouchableOpacity style={styles.downloadButton}>
           <Text style={styles.downloadText}>Download Quote</Text>
         </TouchableOpacity>
       </UpgradeScreenLayout>
 
-      {/* Success Modal */}
       <SuccessModal visible={showModal} onClose={() => setShowModal(false)} />
     </>
   );

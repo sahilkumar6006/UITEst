@@ -1,7 +1,3 @@
-/**
- * Home screen component
- * @file Home.tsx
- */
 
 import Car from '@/assets/images/svg/Car';
 import Header from '@/components/Header';
@@ -50,7 +46,6 @@ const Home = () => {
         horizontal
         renderItem={({ item }) => (
           <View style={{ marginTop: 21, backgroundColor: '#FFFFFF', padding: 13, height: 123, marginHorizontal: 5, elevation: 3, borderRadius: 20 }}>
-            {/* <Image source={item.image} style={{ width: 50, height: 50, marginRight: 13, resizeMode: 'contain' }} /> */}
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
               <Image source={item.image} style={{ width: 50, height: 50, marginRight: 13, resizeMode: 'contain' }} />
 
@@ -68,8 +63,7 @@ const Home = () => {
         <Label>See All</Label>
 
       </View>
-      
-      {/* Info Overlay Modal */}
+
       <InfoOverlayModal
         visible={showModal}
         onClose={() => setShowModal(false)}

@@ -1,8 +1,3 @@
-/**
- * Styles for Home1 screen
- * @file styles.ts
- */
-
 import { StyleSheet } from 'react-native';
 import { useMemo } from 'react';
 import { Colors, ThemeType } from '@/styles/colors';

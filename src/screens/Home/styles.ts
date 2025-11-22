@@ -1,7 +1,4 @@
-/**
- * RTL-aware styles for Home screen
- * @file styles.ts
- */
+
 
 import { StyleSheet } from 'react-native';
 import { useMemo } from 'react';
