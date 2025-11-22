@@ -1,11 +1,9 @@
-/**
- * Reusable Progress Indicator Component
- * @file ProgressIndicator.tsx
- */
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Check from '@/assets/images/svg/Check';
+
+const PROGRESS_LINE_TOP = 48;
 
 interface Step {
   number: number;
@@ -21,7 +19,8 @@ interface ProgressIndicatorProps {
 const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({ steps }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.progressBar} />
+      <View style={styles.progressLine} />
+
       <View style={styles.stepsContainer}>
         {steps.map((step, index) => (
           <View key={index} style={styles.stepContainer}>
@@ -48,18 +47,26 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 40,
     marginBottom: 20,
+    position: 'relative',
   },
-  progressBar: {
+
+  progressLine: {
     height: 2,
     backgroundColor: '#D3DCE6',
     borderRadius: 100,
-    marginBottom: 20,
+    position: 'absolute',
+    top: 8,
+    left: 20,
+    right: 20,
+    zIndex: 0,
   },
+
   stepsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
     paddingHorizontal: 20,
+    zIndex: 1,
   },
   stepContainer: {
     alignItems: 'center',
@@ -114,4 +121,3 @@ const styles = StyleSheet.create({
 });
 
 export default ProgressIndicator;
-

@@ -64,7 +64,7 @@ const Quote = () => {
 
 const styles = StyleSheet.create({
   quoteCard: {
-    backgroundColor: '#F2F2F2',
+    backgroundColor: '#BDBDBD',
     opacity: 0.45,
     borderRadius: 8,
     padding: 16,
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
   },
   totalLabel: {
     fontSize: 12,
-    fontWeight: '500',
+    fontWeight: '600',
     color: '#828282',
     fontFamily: 'Poppins',
   },

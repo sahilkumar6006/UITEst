@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
 import FormInput from '@/components/FormInput';
 import UpgradeScreenLayout from '@/components/UpgradeScreenLayout';
 import { useNavigation } from '@react-navigation/native';
+import Colors from '@/styles/colors';
+import Plus from '@/assets/images/svg/Plus';
+import { images } from '@/constants/images';
 
 const VehicleDetails = () => {
   const navigation = useNavigation<any>();
@@ -17,8 +20,8 @@ const VehicleDetails = () => {
   ];
 
   const vehicles = [
-    { id: '1', name: 'Toyota Yaris', year: '2008', selected: true },
-    { id: '2', name: 'Benz CL250', year: '2017', selected: false },
+    { id: '1', name: 'Toyota Yaris', year: '2008', selected: true, image: images.Car1 },
+    { id: '2', name: 'Benz CL250', year: '2017', selected: false, image: images.Car2 },
   ];
 
   return (
@@ -46,12 +49,13 @@ const VehicleDetails = () => {
               style={[styles.vehicleCard, vehicle.selected && styles.vehicleCardSelected]}
               onPress={() => setSelectedVehicle(vehicle.name)}
             >
-              <View style={styles.vehicleImage} />
+              <Image source={vehicle.image} resizeMode='contain' />
               <Text style={styles.vehicleName}>{vehicle.name}</Text>
               <Text style={styles.vehicleYear}>{vehicle.year}</Text>
             </TouchableOpacity>
           ))}
           <TouchableOpacity style={styles.addVehicleCard}>
+            <Plus />
             <Text style={styles.addVehicleText}>Add New Car</Text>
           </TouchableOpacity>
         </ScrollView>
@@ -169,7 +173,7 @@ const styles = StyleSheet.create({
   addVehicleText: {
     fontSize: 14,
     fontWeight: '400',
-    color: '#F9A130',
+    color: Colors.light.primary,
     fontFamily: 'Poppins',
   },
   formContainer: {
