@@ -3,9 +3,10 @@ import Explore from '@/assets/images/svg/Explore';
 import HomeBottom from '@/assets/images/svg/HomeBottom';
 import Query from '@/assets/images/svg/Query';
 import Home from '@/screens/Home/Home';
-import PersonalInfo from '@/screens/Home1/Home1';
-import VehicleDetails from '@/screens/Home2/Home2';
-import Quote from '@/screens/Home3/Home3';
+import PersonalInfo from '@/screens/PersonalInfo/PersonalInfo';
+import Quote from '@/screens/Quote/Quote';
+import VehicleDetails from '@/screens/VehicleDetails/VehicleDetails';
+
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
